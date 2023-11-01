@@ -1,0 +1,45 @@
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.deps.json
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.runtimeconfig.json
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.runtimeconfig.dev.json
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.dll
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.pdb
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.csproj.AssemblyReference.cache
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfoInputs.cache
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfo.cs
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.csproj.CoreCompileInputs.cache
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.dll
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\refint\DataLayer.dll
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.pdb
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.genruntimeconfig.cache
+D:\FPT\FALL 2022\PRN231\Labs\Final_Lab_Group_02_03_05\BookManagement\DataLayer\obj\Debug\net5.0\ref\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.deps.json
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.runtimeconfig.json
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.runtimeconfig.dev.json
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\bin\Debug\net5.0\DataLayer.pdb
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfo.cs
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\refint\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.pdb
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\DataLayer.genruntimeconfig.cache
+C:\Users\ASUS\OneDrive\Desktop\BookManagement\DataLayer\obj\Debug\net5.0\ref\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\bin\Debug\net5.0\DataLayer.deps.json
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\bin\Debug\net5.0\DataLayer.runtimeconfig.json
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\bin\Debug\net5.0\DataLayer.runtimeconfig.dev.json
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\bin\Debug\net5.0\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\bin\Debug\net5.0\DataLayer.pdb
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfo.cs
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\refint\DataLayer.dll
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.pdb
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\DataLayer.genruntimeconfig.cache
+C:\Users\ASUS\OneDrive\Desktop\Asm02\DataLayer\obj\Debug\net5.0\ref\DataLayer.dll

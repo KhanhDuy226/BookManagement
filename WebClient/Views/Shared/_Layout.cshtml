@@ -1,0 +1,135 @@
+﻿@using WebClient.Extentions
+@using static WebApi.Controllers.IdentityController
+@{
+    ViewData["Title"] = "Home Page";
+    TokenResponse auth = SessionManager.Authenticate(Context);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebClient</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    
+
+    <header>
+
+        @{
+            if (auth != null)
+            {
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                    <div class="container header-text">
+                        <ion-icon name="logo-reddit" class="mr-2 text-white" style="font-size:2rem"></ion-icon>
+                        <a class="navbar-brand text-white">eStore</a>
+                        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon text-white"></span>
+                        </button>
+
+                        @if (auth.User.Role.Description == "Admin")
+                        //Admin Page
+                        {
+                            <div class="collapse navbar-collapse" id="navbarResponsive">
+                                <ul class="navbar-nav ms-auto col-6">
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-controller="Users" asp-action="Index">Users </a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-controller="Publishers" asp-action="Index" >Publishers </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link text-white" asp-controller="Authors" asp-action="Index">Authors </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link text-white" asp-controller="Books" asp-action="Index">Books </a>
+                                    </li>
+                                </ul>
+
+
+
+                                <ul class="navbar-nav ms-auto col-6 d-flex justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-controller="Home" asp-action="Index">AdminPages</a>
+                                    </li>
+
+                                    <li class="nav-item mt-1 ml-1">
+                                        <a asp-controller="Logout" >
+                                            <ion-icon name="log-out-outline" class="text-white" style="font-size:2rem"></ion-icon>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        }
+
+                        // Customer Page
+                        else
+                        {
+                         
+                            <div class="collapse navbar-collapse" id="navbarResponsive">
+                                <ul class="navbar-nav ms-auto col-6">
+                                    
+                                </ul>
+
+                                <ul class="navbar-nav ms-auto col-6 d-flex justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-page="/UserPages/Profile">Wellcome, @auth.User.Email!</a>
+                                    </li>
+                                    <li class="nav-item mt-1 ml-1">
+                                        <a asp-controller="Logout" asp-action="Index">
+                                            <ion-icon name="log-out-outline" class="text-white" style="font-size:2rem"></ion-icon>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </nav>
+                            
+            }
+
+        }
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - WebClient - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @{
+        if(auth != null)
+        {
+            <script>
+            $.ajaxSetup({
+		        headers:{
+                    'Authorization': "Bearer " + "@auth.AccessToken"
+		        }
+		    });
+            </script>
+        }
+    }
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,142 @@
+﻿@using WebApi.Models.Users
+@{
+	ViewData["Title"] = "Register";
+}
+
+@model CreateAppUser
+
+
+<h1 class="text-center">Create Account</h1>
+
+<hr />
+<div class="row">
+    <div class="col-3"></div>
+	<div class="col-6">
+		<form id="form_user" autocomplete="off" class="row"  method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="form-group ">
+				<label asp-for="Email">Email</label>
+				<input class="form-control" asp-for="Email" placeholder="User Email"/>
+				<span class="text-danger" asp-validation-for="Email"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="FirstName">FirstName</label>
+				<input class="form-control" asp-for="FirstName" placeholder="User FirstName"/>
+				<span class="text-danger" asp-validation-for="FirstName"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="MiddleName">MiddleName</label>
+				<input class="form-control" asp-for="MiddleName" placeholder="User MiddleName"/>
+				<span class="text-danger" asp-validation-for="MiddleName"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="LastName">LastName</label>
+				<input class="form-control" asp-for="LastName" placeholder="User LastName"/>
+				<span class="text-danger" asp-validation-for="LastName"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="Source">Source</label>
+				<input class="form-control" asp-for="Source" placeholder="User Source"/>
+				<span class="text-danger" asp-validation-for="Source"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="HireDate">HireDate</label>
+				<input class="form-control" asp-for="HireDate" placeholder="User HireDate"/>
+				<span class="text-danger" asp-validation-for="HireDate"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="PublisherId">Publisher</label>
+				<select class="form-control" asp-for="PublisherId">
+
+				</select>
+				<span class="text-danger" asp-validation-for="PublisherId"></span>
+			</div>
+			<div class="form-group ">
+				<label asp-for="Password">Password</label>
+				<input class="form-control" asp-for="Password"/>
+				<span class="text-danger" asp-validation-for="Password"></span>
+			</div>
+			<div class="form-group col-12 row d-flex">
+				<input type="submit" value="Create" class="btn btn-primary btn-block" />
+				<a asp-controller="Login" asp-action="Index" class="btn btn-danger btn-block">Back to Login</a>
+			</div>
+				
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+<script>
+	// Definition
+
+	var baseUrl = "https://localhost:44310/api/";
+
+	var getAllPublisher = function() {
+
+		$.get(baseUrl + "Publishers", function(data, status)
+		{
+            if (status == "success") {
+                publishers = data;
+                console.log(publishers);
+                fillPublisherToSelectBox(publishers);
+            }
+            else {
+                alert(data);
+			}
+		});
+
+	}
+
+	var fillPublisherToSelectBox = function(dataset) {
+        let dataRow = "";
+
+		dataset.forEach((publisher, idx) => {
+            dataRow += 
+			`
+			<option value=${publisher.id}>${publisher.name}</option>
+			`;
+        });
+
+        $("#PublisherId").append(dataRow);
+
+	}
+
+	var frm = $('#form_user');
+		frm.submit(function (e) {
+
+			e.preventDefault();
+
+            var object = {};
+			(new FormData(e.target)).forEach(function(value, key){
+				object[key] = value;
+			});
+			var json = JSON.stringify(object);
+            console.log("Submit(post): " + json);
+			$.ajax({
+				type: 'post',
+                headers: {
+					"Content-Type": "application/json"
+				},
+				url: baseUrl + "Users",
+				data: json,
+				success: function (user) {
+					alert('Register was successful, Id=' + user.id);
+					console.log(user);
+				},
+				error: function (err) {
+					alert('An error occurred: ' + err.responseText);
+					console.log(err.responseText);
+				},
+			});
+		});
+
+	function Init() {
+		getAllPublisher();
+	}
+
+	Init();
+
+</script>
+}

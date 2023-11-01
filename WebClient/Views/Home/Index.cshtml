@@ -1,0 +1,100 @@
+﻿@using WebClient.Extentions
+@using static WebApi.Controllers.IdentityController
+@{
+    ViewData["Title"] = "Home Page";
+    TokenResponse auth = SessionManager.Authenticate(Context); 
+}
+
+
+@if(auth == null) 
+{
+    <div class="text-center">
+        <h1 class="display-6">Welcome to BookStore</h1>
+        <p>If you do not account, please <a asp-controller="Users" asp-action="Register"> register here</a>.</p>
+        <p>If you have account,<a asp-controller="Login" asp-action="Index"> login here</a>.</p>
+    </div>
+}
+
+
+
+<hr />
+
+<div class="container">
+    <br />
+	<h4 class="text-uppercase text-center ">BOOK MANAGEMENT</h4>
+	<hr />
+	<div class="d-flex justify-content-center">
+		<div id="loading" class="spinner-border text-secondary" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<div class="row" id="flexbox_items"></div>
+</div>
+
+
+@section Scripts 
+{
+<script>
+
+var baseUrl = "https://localhost:44310/api/";
+var itemList = [];
+var selectedItem = null;
+var selectedIndex = -1;
+
+var getAllItems = function() {
+
+	$("#flexbox_items").show();
+    $("#loading").show();
+
+	$.get(baseUrl + "Books", function(data, status)
+	{
+        if (status == "success") {
+			$("#loading").hide(0.5);
+            itemList = data;
+            console.log(itemList);
+            renderItems(itemList);
+        }
+        else {
+            alert(data);
+		}
+	});
+}
+
+var renderItems = function(dataset) {
+            
+    let dataRow = "";
+	
+	dataset.forEach((item, idx) => {
+        dataRow += BookRenderer(item);
+    });
+
+    $("#flexbox_items").html(dataRow);
+    addFillDataEvent();
+
+}
+
+var addFillDataEvent = () => {
+	
+}
+
+
+
+var Init = function() {
+	$("#loading").hide();
+    $("#flexbox_items").hide();
+    //$("#form_update").hide();
+    //$("#form_create").hide();
+
+    getAllItems();
+    //getOptions("GetCities", $("select[name='City']"));
+    //getOptions("GetStates", $("select[name='State']"));
+    //getOptions("GetCountries", $("select[name='Country']"));
+}
+
+Init();
+
+;
+
+</script>
+
+}
