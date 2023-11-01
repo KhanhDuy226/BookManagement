@@ -23,7 +23,7 @@ namespace WebClient.Controllers
             {
                 return View(loginModel);
             }
-
+            
             HttpClient client = new HttpClient();
             StringContent body = new StringContent(JsonConvert.SerializeObject(loginModel), System.Text.Encoding.UTF8, "application/json");
             string url = "https://localhost:44310/api/Identity/RequiredToken";

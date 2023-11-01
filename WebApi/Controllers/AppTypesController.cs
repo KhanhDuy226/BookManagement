@@ -54,7 +54,7 @@ namespace WebApi.Controllers
 
             return Ok(types);
         }
-
+        //get publisher
         [HttpGet]
         public IActionResult GetPublishers()
         {
